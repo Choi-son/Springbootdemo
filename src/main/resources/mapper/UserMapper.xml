@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.User">
+        <id column="userId" jdbcType="VARCHAR" property="userId" />
+        <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+        <result column="balance" jdbcType="VARCHAR" property="balance" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        userId, pwd, balance
+    </sql>
+    <select id="loginin" parameterType="com.example.demo.entity.User" resultMap="BaseResultMap">
+        select
+        userId,pwd,balance
+        from user
+        where userId = #{userId} and pwd = #{pwd};
+    </select>
+
+
+</mapper>

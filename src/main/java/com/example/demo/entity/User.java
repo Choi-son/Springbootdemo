@@ -1,30 +1,31 @@
 package com.example.demo.entity;
 public class User {
-    private String userId;
-    private String pwd;
-    private String balance;
+    private String u_id;
+    private String name;
+    private String password;
 
-    public String getBalance() {
-        return balance;
+    public String getName() {
+        return name;
     }
 
-    public void setBalance(String balance) {
-        this.balance = balance;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUserId() {
-        return userId;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public String getPassword() {
+        return password;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getU_id() {
+        return u_id;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setU_id(String u_id) {
+        this.u_id = u_id;
     }
 }

@@ -31,7 +31,7 @@ public class helloWorld {
        User user = regService.regUser(userId,pwd);
        if(user!=null) {
            ModelAndView modelAndView = new ModelAndView("welcome");
-           modelAndView.addObject("userId",userId);
+           modelAndView.addObject("userId",user.getU_id());
                return modelAndView;
 
        }

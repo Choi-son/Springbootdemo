@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface UserMapper {
  //登陆验证查询
-  User loginin(@Param("userId") String UserId,@Param("pwd") String pwd);
+  User loginin(@Param("u_id") String UserId,@Param("password") String pwd);
   //转账业务
  // int transfer(@Param("userId")String UserId,@Param("transferBalance") String balance);
   //存取业务

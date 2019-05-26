@@ -15,4 +15,14 @@ public class RegServiceimpl  implements IRegService {
         return user;
     }
 
+    @Override
+    public int sBalance(String userId) {
+        int balance = userMapper.sbalance(userId);
+        return balance;
+    }
+
+    @Override
+    public void wBalance(String userId, int money) {
+        userMapper.withdraw(userId,money);
+    }
 }

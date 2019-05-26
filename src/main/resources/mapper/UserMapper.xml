@@ -7,5 +7,14 @@
         from user
         where u_id = #{u_id} and password = #{password};
     </select>
-
+   <select id="sbalance" parameterType="java.lang.String" resultType="java.lang.Integer">
+       select
+       money
+       from  balance
+       where u_id= #{u_id}
+   </select>
+    <select id="withdraw" >
+        update balance set money = #{money}
+        where u_id = #{u_id}
+    </select>
 </mapper>

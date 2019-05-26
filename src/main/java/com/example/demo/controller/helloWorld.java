@@ -31,7 +31,7 @@ public class helloWorld {
        User user = regService.regUser(userId,pwd);
        if(user!=null) {
            ModelAndView modelAndView = new ModelAndView("welcome");
-           modelAndView.addObject("userId",user.getU_id());
+           modelAndView.addObject("userName",user.getName());
                return modelAndView;
 
        }
@@ -43,7 +43,7 @@ public class helloWorld {
    }
    @RequestMapping(value = "/welcome")
    public String welcome (HttpServletRequest request, Model model){
-        model.addAttribute("userId",request.getAttribute("userId"));
+        model.addAttribute("userName",request.getAttribute("userName"));
         return "welcome";
    }
    @RequestMapping(value = "/fail")

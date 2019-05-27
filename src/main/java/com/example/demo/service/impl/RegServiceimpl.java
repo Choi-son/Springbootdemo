@@ -4,6 +4,8 @@ import com.example.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.mapper.UserMapper;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RegServiceimpl  implements IRegService {
@@ -27,7 +29,14 @@ public class RegServiceimpl  implements IRegService {
     }
 
     @Override
+
     public void dBalance(String userId, int money) {
         userMapper.deposit(userId,money);
+    }
+    @Transactional(isolation = Isolation.SERIALIZABLE)
+    public void tBalance(String selfId,int s_balance,String othersId,int o_balance)
+    {
+        userMapper.withdraw(selfId,s_balance);
+        userMapper.deposit(othersId,o_balance);
     }
 }

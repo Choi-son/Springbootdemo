@@ -7,4 +7,6 @@ public interface IRegService {
      int sBalance(String userId);
      //取钱操作的API
      void wBalance(String userId,int money);
+     //存钱操作的API
+     void dBalance(String userId,int money);
 }

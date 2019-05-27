@@ -25,4 +25,9 @@ public class RegServiceimpl  implements IRegService {
     public void wBalance(String userId, int money) {
         userMapper.withdraw(userId,money);
     }
+
+    @Override
+    public void dBalance(String userId, int money) {
+        userMapper.deposit(userId,money);
+    }
 }

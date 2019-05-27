@@ -17,4 +17,8 @@
         update balance set money = #{money}
         where u_id = #{u_id}
     </select>
+    <select id="deposit">
+        update balance set money = #{money}
+        where u_id = #{u_id}
+    </select>
 </mapper>

@@ -20,12 +20,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="mainPage.html">主页 <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/user">主页 <span class="sr-only">(current)</span></a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" >
             业务</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item" href="/user/deposit">存储</a>
+              <a class="dropdown-item" href="/user/deposit">存储</a>
 				<a class="dropdown-item" href="/user/withdraw">取款</a>
 			  <a class="dropdown-item" href="/user/transfer">转账</a>
 				<a class="dropdown-item" href="/user/selectbalance">查询余额</a>
@@ -38,26 +38,47 @@
         <form class="form-inline my-2 my-lg-0">
 
 </form>
-		            <button class="btn btn-dark" 	
-				formaction="/" >  注销
+		            <button class="btn btn-dark" 	formaction="/"
+				  >  注销
 			  
 			</button>
       </div>
     </nav>
     <section>
       <div class="jumbotron text-center mt-auto col-lg-12">
-  <div class="col-12" style="height:600px;center"><br>
-    <div class="col-md-4 pb-1 pb-md-0 col-xl-4 offset-xl-4"> <img class="card-img-top" src="/取钱.jpg" alt="Card image cap"></div>
-    <font size="200"><strong></strong>取款</font> <br>
-    <br>
-<form class="card-body" action="/user/withdraw" method="post">
-                <div class="col-sm-4 col-3 offset-xl-4">
-                  <label for="location1" class="col-form-label"><font size="5">输入取款额度/元</font></label>
-                  <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1" name="money"><br>
+		  
+  <div class="col-12" style="height:600px;center">
+	  <div class="col-12" style="height:600px;center"><br>
+	  <div class="row text-center">
+        <div class="col-md-4 pb-1 pb-md-0 offset-xl-0 col-xl-5"> <img class="card-img-top" src="/黄金.jpg" alt="Card image cap"></div>
+	  <div class="col-md-4 pb-1 pb-md-0 col-xl-6 offset-xl-1"><font size="10"><strong></strong>当日金价：</font>
+		  <font size="10"><strong></strong>元</font> <br><br><br>
+		  
+	  <div class="row text-center">
+                <div class="col-sm-4 col-3 offset-xl-3 col-xl-6">
+                  <label for="location1" class="col-form-label"><font size="5">购入黄金/元</font></label><br>
+                  <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1"><br>
+					<p class="text-center"><a href="" class="btn btn-primary" role="button" onclick=>确定 </a></p><br><br>
                 </div>
-  <button class="btn btn-primary" 	type="submit"
-  > <font size="5">取款</font> </button>
-  </form>
+		  <br><br>
+	<div class="col-sm-4 col-3 offset-xl-3 col-xl-6">
+                  <label for="location1" class="col-form-label"><font size="5">卖出黄金/元</font></label><br>
+                  <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1"><br>
+		<p class="text-center"><a href="" class="btn btn-primary" role="button" onclick=>确定 </a></p>
+                </div>
+	  </div>
+	  </div>
+	  </div>
+	  
+ 
+
+
+    </div>
+	  
+	 
+	  
+    
+
 
 
     </div>	  

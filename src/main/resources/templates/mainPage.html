@@ -1,0 +1,60 @@
+<!DOCTYPE html >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boots</title>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap-4.0.0.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/user">主页 <span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          业务</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/user/deposit">存储</a>
+          <a class="dropdown-item" href="/user/withdraw">取款</a>
+          <a class="dropdown-item" href="/user/transfer">转账</a>
+          <a class="dropdown-item" href="/user/selectbalance">查询余额</a>
+          <a class="dropdown-item" href="/user/management">理财项目</a>
+        </div>
+      </li>
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-dark" formaction="/">注销</button>
+    </form>
+  </div>
+</nav>
+<section>
+  <div class="jumbotron text-center mt-auto col-lg-12">
+    <div class="col-12" style="height:600px;center">
+      <br><br><br><br><br>
+
+      <font size=200><b th:text="${userName}"></b>，欢迎光临银行</font>
+      <br><br>
+      <p>本银行为用户提供存储，转账，理财等多项业务</p>
+
+
+
+    </div>
+    <div id="footer" class="col-12" style="center;">
+      @云计算第x组 </div>
+</section>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap-4.0.0.js"></script>
+</body>
+</html>

@@ -21,7 +21,7 @@ public class helloWorld {
     //强制登陆页面
     @RequestMapping(value = "/")
     public String index(){
-        return  "login";
+        return  "loginPage";
     }
     //处理登陆的验证
    @RequestMapping(value = "/user",method = RequestMethod.POST)
@@ -30,7 +30,7 @@ public class helloWorld {
                               HttpServletRequest request){
        User user = regService.regUser(userId,pwd);
        if(user!=null) {
-           ModelAndView modelAndView = new ModelAndView("welcome");
+           ModelAndView modelAndView = new ModelAndView("mainPage");
            modelAndView.addObject("userName",user.getName());
            request.getSession().setAttribute("userName",user.getName());
           request.getSession().setAttribute("userId",user.getU_id());
@@ -47,7 +47,7 @@ public class helloWorld {
    @RequestMapping(value = "/user",method = RequestMethod.GET)
     public ModelAndView returnhome(HttpServletRequest request){
        if(request.getSession().getAttribute("userName")!=null)
-       {ModelAndView modelAndView = new ModelAndView("welcome");
+       {ModelAndView modelAndView = new ModelAndView("mainPage");
            modelAndView.addObject("userName",request.getSession().getAttribute("userName"));
            return modelAndView;
        }
@@ -63,7 +63,7 @@ public class helloWorld {
         String userId =(String)request.getSession().getAttribute("userId");
       int balance = regService.sBalance(userId);
        model.addAttribute("userbalance",balance);
-       return "select";
+       return "checkMoney";
    }
 //返回取钱的页面
     @RequestMapping(value = "/user/withdraw" ,method = RequestMethod.GET)
@@ -92,7 +92,7 @@ public class helloWorld {
     //返回一个存钱的页面
 @RequestMapping(value = "/user/deposit" ,method = RequestMethod.GET)
     public String depoistview(){
-        return "deposit";
+        return "saveMoney";
     }
     //验证存钱的细节
     @RequestMapping(value = "/user/deposit",method = RequestMethod.POST)
@@ -136,5 +136,28 @@ public class helloWorld {
        }
 
     }
-
+    //得到理财页面
+    @RequestMapping(value = "/user/management" ,method = RequestMethod.GET)
+    public String manangementview()
+    {
+        return "manageMoney";
+    }
+    //得到定期页面
+    @RequestMapping(value = "/user/management/regularSave",method = RequestMethod.GET)
+    public String regularSaveview()
+    {
+        return "regularSave";
+    }
+    //得到基金页面
+    @RequestMapping(value = "/user/management/fund",method = RequestMethod.GET)
+    public String fundview()
+    {
+        return "fund";
+    }
+    //得到黄金页面
+     @RequestMapping(value = "/user/management/gold",method =RequestMethod.GET)
+    public String goldview()
+     {
+         return "gold";
+     }
 }
